@@ -2,12 +2,13 @@ import api from './api';
 
 class App {
 	constructor() {
-		this.repositories = [];
+		this.repositories = JSON.parse(localStorage.getItem('repo_list')) || [];
 
 		this.formEl = document.querySelector('#repo-form');
 		this.inputEl = document.querySelector('input[name=repository]');
 		this.listEl = document.querySelector('#repo-list');
 
+		this.render();
 		this.registerHandlers();
 	}
 
@@ -48,6 +49,7 @@ class App {
 			});
 
 			this.render();
+			this.saveToStorage();
 		} catch (err) {
 			alert('O repositório não existe!');
 		}
@@ -81,6 +83,10 @@ class App {
 
 			this.listEl.appendChild(listItemEl);
 		});
+	}
+
+	saveToStorage() {
+		localStorage.setItem('repo_list', JSON.stringify(this.repositories));
 	}
 }
 
