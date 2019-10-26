@@ -1,0 +1,64 @@
+- Acessar raiz do projeto pelo CMD
+- Em package.json, alterar "dependencies" para "devDependencies"
+
+Colocar o arquivo main.js na pasta src (criar)
+Colocar o arquivo index.html na pasta public (criar)
+
+1. yarn add webpack webpack-cli -D
+2. yarn add babel-loader -D
+3. yarn add webpack-dev-server -D
+4. yarn add @babel/plugin-transform-async-to-generator -D
+5. yarn add @babel/polyfill -D
+
+- Criar o arquivo webpack.config.js na raiz do projeto e digitar o código abaixo nele
+
+module.exports = {
+	entry: './src/main.js',
+	output: {
+		path: __dirname + '/public',
+		filename: 'bundle.js'
+	},
+	devServer: {
+		contentBase: __dirname + '/public'
+	},
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader'
+				}
+			}
+		]
+	}
+};
+
+- No package.json, 
+
+trocar: 
+"dev": "babel ./main.js -o ./bundle.js -w"
+
+por: 
+"webpack-dev-server --mode=development"
+
+- Adicionar a seguinte linha no package.json após o "dev"
+
+"build": "webpack --mode=production"
+
+Dar um yarn build (rodar em produção)
+
+Adicionar o "@babel/plugin-transform-async-to-generator" no .babelrc, o arquivo ficara assim:
+
+{
+	"presets": ["@babel/preset-env"],
+	"plugins": [
+		"@babel/plugin-transform-async-to-generator"
+	]
+}
+
+Adicionar o '@babel/polyfill' na entry do webpack.config.js, ficara assim:
+
+...
+entry: ['@babel/polyfill', './src/main.js'],
+...

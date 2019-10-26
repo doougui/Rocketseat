@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Condicionais - If</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var sexo;
+
+		function retornaSexo(sexo) {
+			sexo = prompt("Sexo (M/F): ");
+
+			if ((sexo == "M") || (sexo == "m")) {
+				return "Masculino";
+			} else if ((sexo == "F") || (sexo == "f"))  {
+				return "Feminino";
+			} else {
+				return "Sexo Inválido";
+			}
+
+			return sexo;
+		}
+
+		var resultado = retornaSexo('sdajndiuasndiuasdhsiu')
+		console.log(resultado)
+	</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+- Acessar raiz do projeto pelo CMD
+
+1. yarn add axios
+
+No main.js adicionar a seguinte linha:
+
+import axios from 'axios';

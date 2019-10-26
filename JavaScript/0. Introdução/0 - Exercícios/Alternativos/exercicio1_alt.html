@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 1</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function exibeMensagem(endereco) {
+			return 'O usuário mora em ' + endereco.cidade + ' / ' + endereco.uf + ' no bairro ' + endereco.bairro + ', na rua "' + endereco.rua + '" com nº ' + endereco.numeros;
+		}
+		var endereco = {
+			rua: "Rua dos pinheiros",
+			numeros: 1293,
+			bairro: "Centro",
+			cidade: "São Paulo",
+			uf: "SP"
+		};
+
+		console.log(exibeMensagem(endereco));
+	</script>
+
+</body>
+</html>

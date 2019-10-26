@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 1</title>
+</head>
+<body>
+	<div id="app">
+		<button>Botão</button><br><br>
+	</div>
+
+	<script type="text/javascript">
+		var containerElement = document.querySelector('#app');
+		var buttonElement = document.querySelector('button');
+
+		buttonElement.onclick = function addBox() {
+			var boxElement = document.createElement('div');
+			boxElement.setAttribute('class', 'box');
+
+			containerElement.appendChild(boxElement);
+
+			boxElement.style.width = '100px';
+			boxElement.style.height = '100px';
+			boxElement.style.backgroundColor = '#CCC';
+			boxElement.style.margin = '10px';
+			boxElement.style.float = 'left';
+
+		}
+	</script>
+
+</body>
+</html>

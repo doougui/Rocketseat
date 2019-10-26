@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 2</title>
+</head>
+<body>
+	<div id="app">
+		<button>Botão</button><br><br>
+	</div>
+
+	<script type="text/javascript">
+		var containerElement = document.querySelector('#app');
+		var buttonElement = document.querySelector('button');
+
+		buttonElement.onclick = function addBox() {
+			var boxElement = document.createElement('div');
+			boxElement.setAttribute('class', 'box');
+
+			containerElement.appendChild(boxElement);
+
+			boxElement.style.width = '100px';
+			boxElement.style.height = '100px';
+			boxElement.style.backgroundColor = '#CCC';
+			boxElement.style.margin = '10px';
+			boxElement.style.float = 'left';
+
+			function getRandomColor() {
+				var letters = "0123456789ABCDEF";
+				var color = "#";
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
+
+			var newColor = getRandomColor();
+
+			boxElement.onmouseover = function addColor() {
+				boxElement.style.backgroundColor = getRandomColor();
+			}
+		}
+
+	</script>
+
+</body>
+</html>

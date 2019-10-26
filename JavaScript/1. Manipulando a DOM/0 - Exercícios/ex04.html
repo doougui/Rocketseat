@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 4</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" name="item">
+		<button onclick="adicionar()">Adicionar</button>
+		<ul></ul>
+	</div>
+
+	<script type="text/javascript">
+		var nomes = ["Diego", "Gabriel", "Lucas"];
+		var containerElement = document.querySelector('#app');
+		var inputElement = document.querySelector('input');
+		var ulElement = document.querySelector('ul');
+		var liElement = new Array();
+		var i = 0;
+
+		var liElement = document.createElement('li');
+		var liElement2 = document.createElement('li');
+		var liElement3 = document.createElement('li');
+
+		var textElement = document.createTextNode(nomes[0]);
+		var textElement2 = document.createTextNode(nomes[1]);
+		var textElement3 = document.createTextNode(nomes[2]);
+
+		liElement.appendChild(textElement);
+		liElement2.appendChild(textElement2);
+		liElement3.appendChild(textElement3);
+
+		ulElement.appendChild(liElement);
+		ulElement.appendChild(liElement2);
+		ulElement.appendChild(liElement3);
+
+		function adicionar() {
+			var texto = inputElement.value;
+
+			liElement[i] = document.createElement('li');
+			textElement[i] = document.createTextNode(texto);
+			liElement[i].appendChild(textElement[i]);
+			ulElement.appendChild(liElement[i]);
+
+			inputElement.value = '';
+
+			i += 1;
+		}
+
+	</script>
+
+</body>
+</html>

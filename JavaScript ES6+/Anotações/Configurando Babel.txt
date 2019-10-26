@@ -1,0 +1,31 @@
+- Acessar raiz do projeto pelo CMD
+
+1. yarn init
+2. yarn add @babel/cli
+3. yarn add @babel/preset-env
+4. yarn add @babel/core
+5. yarn add @babel/plugin-proposal-object-rest-spread
+
+- Criar arquivo .babelrc na raiz do projeto e digitar o código abaixo nele
+
+{
+  "presets": ["@babel/preset-env"]
+  "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+}
+
+package.json = 
+
+{
+  "name": "nome_do_projeto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0"
+  },
+  "scripts": {
+    "dev": "babel ./main.js -o ./bundle.js -w"
+  }
+}

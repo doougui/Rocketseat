@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eventos inline</title>
+</head>
+<body>
+	<div class="app">
+		<button onclick="mostraAlerta()">Me Pressione</button>
+		<button onmouseover="mostraAlerta()">Passe por Cima</button>
+		<input type="text" name="test" onkeydown="mostraAlerta()">
+		<input type="text" name="test" onkeyup="mostraAlerta()">
+		<input type="text" name="test" onkeypress="mostraAlerta()">
+	</div>
+
+	<script type="text/javascript">
+		function mostraAlerta() {
+			alert("A ação aconteceu!");
+		}
+
+	</script>
+
+</body>
+</html>
